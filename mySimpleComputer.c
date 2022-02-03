@@ -1,4 +1,6 @@
 #include "mySimpleComputer.h"
+#include <stddef.h>
+#include <stdio.h>
 
 int memory[100] = {0};
 int accumulator;
@@ -35,16 +37,28 @@ int sc_memoryGet (int address, int * value)
 
 int sc_memorySave (char * filename)
 {
-	FILE *output = NULL;
-	output = fopen(filename, "wb");
-	fwrite(memory, sizeof(int), 100, output);
-	fclose(output)
+	FILE *f = NULL;
+	f = fopen(filename, "wb");
+	fwrite(memory, sizeof(int), 100, f);
+	fclose(f);
 }
-int sc_memoryLoad (char * filename);
-int sc_regInit ();
+int sc_memoryLoad (char * filename)
+{
+	FILE *f = NULL;
+	f = fopen(filename, "rb");
+	fread(memory, sizeof(int), 100, f);
+	fclose(f);
+}
+/*int sc_regInit ();
 int sc_regSet (int reg, int value);
 int sc_regGet (int register, int * value);
 int sc_commandEncode (int command, int operand, int * value);
-int sc_commandDecode (int value, int * command, int * operand);
+int sc_commandDecode (int value, int * command, int * operand);*/
+
+int main()
+{
+	printf("It's alive!!\n");
+	return 0;
+}
 
 
