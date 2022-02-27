@@ -1,15 +1,6 @@
-#include "mySimpleComputer.h"
+#include "src/mySimpleComputer.h"
 #include <stddef.h>
 #include <stdio.h>
-
-int memory[100] = {0};
-int accumulator;
-int instructionCounter;
-int operation;
-int flags[5] = {0};
-int cell;
-int keys;
-
 
 int sc_memoryInit ()
 {
@@ -78,7 +69,7 @@ int sc_regGet (int reg, int * value)
 	if(flags[reg] >= 5 || flags[reg] < 0){
 		return 1;
 	}
-	flags[reg] = &value;
+	flags[reg] = *value;
 	return 0;
 }
 int sc_commandEncode (int command, int operand, int * value)
@@ -114,10 +105,6 @@ int sc_commandDecode (int value, int * command, int * operand)
 	}
 }
 
-int main()
-{
-	printf("It's alive!!\n");
-	return 0;
-}
+
 
 
