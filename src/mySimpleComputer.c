@@ -69,7 +69,7 @@ int sc_regGet (int reg, int * value)
 	if(flags[reg] >= 5 || flags[reg] < 0){
 		return 1;
 	}
-	flags[reg] = *value;
+	*value = flags[reg];
 	return 0;
 }
 int sc_commandEncode (int command, int operand, int * value)
