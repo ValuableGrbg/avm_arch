@@ -1,16 +1,16 @@
 #pragma once
 
-#define ZERO_DIVISION 0
-#define OVERFLOW 1
-#define OUT_OF_MEMORY_BORDERS 2
-#define IGNORE_TICKS 3
-#define WRONG_COMMAND 4
+#define ZERO_DIVISION 1
+#define OVERFLOW 2
+#define OUT_OF_MEMORY_BORDERS 3
+#define IGNORE_TICKS 4
+#define WRONG_COMMAND 5
 
 int memory[100];
 int accumulator;
 int instructionCounter;
 int operation;
-int flags[5];
+int sc_register;
 int cell;
 int keys;
 

@@ -32,11 +32,12 @@ void print_bin(int num){
 
 void print_flags()
 {
-	printf("ZERO_DIVISION: %d\n", flags[0]);
-	printf("OVERFLOW: %d\n", flags[1]);
-	printf("OUT_OF_MEMORY_BORDERS: %d\n", flags[2]);
-	printf("IGNORE_TICKS: %d\n", flags[3]);
-	printf("WRONG_COMMAND: %d\n", flags[4]);
+	int value;
+	printf("ZERO_DIVISION: %d\n", sc_regGet(0, &value));
+	printf("OVERFLOW: %d\n", sc_regGet(1, &value));
+	printf("OUT_OF_MEMORY_BORDERS: %d\n", sc_regGet(2, &value));
+	printf("IGNORE_TICKS: %d\n", sc_regGet(3, &value));
+	printf("WRONG_COMMAND: %d\n", sc_regGet(4, &value));
 }
 
 int main()
