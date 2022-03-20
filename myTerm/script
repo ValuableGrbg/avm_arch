@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "\E[H\E[J \E[5;10H  \E[40m \E[31m vadim ulya \E[6;8H \E[47m \E[32m IP-015 \E[1;10H \E[00m \E[00m"
