@@ -48,7 +48,7 @@ int mt_gotoXY(int x, int y) {
    mt_getscreensize(&tty_rows, &tty_cols);
    if ((x >= 0) && (x <= tty_rows) && (y >= 0) && (y <= tty_cols)) {
       char buf[8];
-      sprintf(buf, GOTO_XY, y, x);
+      sprintf(buf, GOTO_XY, x, y);
       write(tty, buf, strlen(buf));
       close(tty);
       return 0;
